@@ -1,0 +1,29 @@
+#!/bin/bish
+#counter ()  # takes one argument
+#{
+ # local let "c1+=$1"
+ # let "c2+=${1}*2"
+ # echo "counters are $c1 and $c2"
+#} 
+
+#for i in `seq 0 10`
+#do 
+#counter $i
+#done
+
+
+counter ()
+{
+    local let "c1+=$1"
+    let "c2+=${1}*2"
+}
+ 
+i=1
+while [[ $i -le 10 ]]
+do 
+  counter $i
+  let "i+=1"
+done
+ 
+echo "counters are $c1 and $c2"
+
